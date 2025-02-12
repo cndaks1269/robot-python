@@ -8,6 +8,7 @@ True라면 계속 진행을 False라면 문구와 함깨 종료한다.
 # 사용자 입력 함수 만들기
 def user_input():
     return input("사용자 차례: ")
+
 # 3.6.9 일때 함수 만들기
 def check_369(number):
     number = str(number)
@@ -17,5 +18,14 @@ def check_369(number):
             clap_count += 1
     return clap_count
 
-# 100까지 숫자열 만들기
-# True, False 판별하기
+# True, False 함수 만들기
+def check_correct(now_number, answer):
+    clap = check_369(now_number)
+    if clap:
+        if answer == "짝"*clap:
+            print("")
+            return True
+        else:
+            return False
+    else:
+        return now_number == answer
